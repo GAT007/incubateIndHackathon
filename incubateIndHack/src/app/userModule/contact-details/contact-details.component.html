@@ -1,31 +1,38 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="bodyClass">
 
+  
+  <div>
 
-  <!-- <h4> FILTER PANEL </h4> -->
-  <div class="containerClass">
-    <mat-drawer-container class="example-container" autosize>
-      <mat-drawer #drawer class="example-sidenav" mode="side">
-        <div class="savedFilters"><span>
-            SAVED FILTERS
-          </span></div>
-
-      </mat-drawer>
-      
-        <div class="example-sidenav-content">
-     
-          <span> <i class="material-icons iconClass" (click)="drawer.toggle()">
-            list
-            </i></span>
-
-           
-          <span><label class="panelDisplay"> FILTER PANEL</label></span>
-
+    <mat-tab-group>
+      <mat-tab label="List of Tasks">
+        <div>
+          <mat-accordion>
+            <mat-expansion-panel  class="expansionPanel">
+              <mat-expansion-panel-header  class="expansionHeader">
+                <mat-panel-title>
+                  Task Name
+                </mat-panel-title>
+                <mat-panel-description>
+                    Deadline
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-card> Description</mat-card>
+              <mat-card> Points</mat-card>
+            </mat-expansion-panel>
+          </mat-accordion>
         </div>
-
-
-    
-    
-    </mat-drawer-container>
+      </mat-tab>
+      <mat-tab label="Skills and Interest">
+        <div>
+          Skills and Interest
+        </div>
+      </mat-tab>
+      <mat-tab label="Contact Details">
+        <div>
+          Contact Details
+        </div>
+      </mat-tab>
+    </mat-tab-group>
   </div>
 </div>

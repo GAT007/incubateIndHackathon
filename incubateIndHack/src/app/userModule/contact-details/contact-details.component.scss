@@ -12,27 +12,41 @@
 }
 
 .bodyClass {
-
   height: auto;
 }
 
 
-.savedFilters{
-   background-color: aliceblue;
+.hamburgerMenu{
+   background-color:  rgba(30, 114, 240, 0.89);
+   height: 100%;
+   width:auto;
 
 }
 
-.example-sidenav{
-    background-color: aliceblue;
-    height: 100%;
-
+.example-small-box, .example-large-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
 }
 
-.example-sidenav-content{
-    background-color: rgba(30, 114, 240, 0.89);
-    height: 100%;
-    padding-left: 10px;
-    margin-left: -3px;
-    height: 40px !important;
-    font: normal 0.6rem  !important;
+.example-small-box {
+  height: 100px;
+  width: 100px;
+}
+
+.example-large-box {
+  height: 300px;
+  width: 300px;
+}
+
+
+.expansionPanel{
+  background-color: rgb(181, 206, 243);
+}
+
+.expansionHeader{
+  background-color: rgb(119, 166, 236);
 }
