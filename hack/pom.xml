@@ -48,6 +48,17 @@
 			<scope>test</scope>
 		</dependency>
         
+        <dependency>
+        	<groupId>org.apache.mahout</groupId>
+        	<artifactId>mahout-mr</artifactId>
+        	<version>0.10.0</version>
+        	<exclusions>
+            	<exclusion>	
+                	<groupId>org.apache.hadoop</groupId>
+                	<artifactId>hadoop-core</artifactId>	
+            	</exclusion>
+        	</exclusions>
+		</dependency>
 
 	</dependencies>
 
