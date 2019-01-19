@@ -15,14 +15,16 @@ import { ExampleComponent } from './userModule/example/example.component';
 import { MatCardModule } from '@angular/material/card';
 
 import { LoginComponent } from "./login/login.component";
-import { SignUpComponent } from './sign-up/sign-up.component'
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { AdminDashboardComponent } from './admin-module/admin-dashboard/admin-dashboard.component'
 @NgModule({
   declarations: [
     AppComponent,
     ContactDetailsComponent,
     ExampleComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
