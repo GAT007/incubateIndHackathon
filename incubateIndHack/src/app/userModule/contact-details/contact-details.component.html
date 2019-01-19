@@ -1,20 +1,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="bodyClass">
 
-  
+
   <div>
 
     <mat-tab-group>
       <mat-tab label="List of Tasks">
         <div>
           <mat-accordion>
-            <mat-expansion-panel  class="expansionPanel">
-              <mat-expansion-panel-header  class="expansionHeader">
+            <mat-expansion-panel class="expansionPanel">
+              <mat-expansion-panel-header class="expansionHeader">
                 <mat-panel-title>
                   Task Name
                 </mat-panel-title>
                 <mat-panel-description>
-                    Deadline
+                  Deadline
                 </mat-panel-description>
               </mat-expansion-panel-header>
               <mat-card>Description</mat-card>
@@ -23,14 +23,24 @@
           </mat-accordion>
         </div>
       </mat-tab>
-      <mat-tab label="Skills and Interest">
+
+      <mat-tab label="Profile">
         <div>
-          Skills and Interest
-        </div>
-      </mat-tab>
-      <mat-tab label="Contact Details">
-        <div>
-          Contact Details
+          <form [formGroup]="profileForm" (ngSubmit)="submit($event)">
+            <div class="form-group">
+              <label>Skills</label>
+              <div *ngIf="add">
+                <input [(ngModel)]="skillValue" formControlName="skills" (keyup.enter)="addedText(skillValue)">
+              </div>
+              <div *ngFor="let val of labelList"> <label> {{val}}</label>
+              </div>
+              <div *ngIf="labelList!=='' && labelList.length!==0">
+                <i class="material-icons" (click)="addLabel()">
+                  add
+                </i>
+              </div>
+            </div>
+          </form>
         </div>
       </mat-tab>
     </mat-tab-group>

@@ -32,11 +32,11 @@ export class LoginComponent implements OnInit {
     }
 
     onAdminLogin(event) {   
-        this.router.navigate(["/app/"]);
+        this.router.navigate(["app/contactDetails"]);
     }    
 
     onUserLogin(event) {
-
+        this.router.navigate(["app/contactDetails"]);
     }
 
     openSignUp() {

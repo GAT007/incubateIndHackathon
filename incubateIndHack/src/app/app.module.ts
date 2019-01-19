@@ -10,9 +10,10 @@ import { APP_ROUTES } from './general-component/app-router/app-router.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { ExampleComponent } from './userModule/example/example.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+
 import { LoginComponent } from "./login/login.component";
 import { SignUpComponent } from './sign-up/sign-up.component'
 @NgModule({
@@ -25,6 +26,7 @@ import { SignUpComponent } from './sign-up/sign-up.component'
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(
       APP_ROUTES,
