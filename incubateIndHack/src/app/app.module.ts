@@ -14,13 +14,13 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { ExampleComponent } from './example/example.component';
 import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
-import { LoginComponent } from "./login/login.component";
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { GetService } from './general-component/services/get.service';
 import { PostService } from './general-component/services/post.service';
 import {HttpModule} from '@angular/http';
 
 import { AdminDashboardComponent } from './admin-module/admin-dashboard/admin-dashboard.component'
+import { LoginComponent } from './loginModule/login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +52,7 @@ import { AdminDashboardComponent } from './admin-module/admin-dashboard/admin-da
   ],
   providers: [GetService,PostService],
   bootstrap: [AppComponent],
-  entryComponents: [LoginComponent,UserDashboardComponent],
+  entryComponents: [LoginComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
