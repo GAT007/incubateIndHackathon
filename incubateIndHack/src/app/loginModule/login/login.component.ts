@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
   }    
 
   onUserLogin(event) {
-      this.router.navigate(["app/contactDetails"]);
+      this.router.navigate(["app/userDashboard"]);
   }
 
   openSignUp() {
