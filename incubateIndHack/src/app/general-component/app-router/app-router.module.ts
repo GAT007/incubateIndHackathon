@@ -9,7 +9,7 @@ import { AdminDashboardComponent } from "../../admin-module/admin-dashboard/admi
 export const APP_ROUTES: Routes = [
   {
     path: "",
-    component: UserDashboardComponent
+    component: LoginComponent
   },
   {
     path: "app/userDashboard",
