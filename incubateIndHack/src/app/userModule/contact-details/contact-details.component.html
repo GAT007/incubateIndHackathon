@@ -1,20 +1,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="bodyClass">
 
-  
+
   <div>
 
     <mat-tab-group>
       <mat-tab label="List of Tasks">
         <div>
           <mat-accordion>
-            <mat-expansion-panel  class="expansionPanel">
-              <mat-expansion-panel-header  class="expansionHeader">
+            <mat-expansion-panel class="expansionPanel">
+              <mat-expansion-panel-header class="expansionHeader">
                 <mat-panel-title>
                   Task Name
                 </mat-panel-title>
                 <mat-panel-description>
-                    Deadline
+                  Deadline
                 </mat-panel-description>
               </mat-expansion-panel-header>
               <mat-card>Description</mat-card>
@@ -23,14 +23,43 @@
           </mat-accordion>
         </div>
       </mat-tab>
-      <mat-tab label="Skills and Interest">
+
+      <mat-tab label="Profile">
         <div>
-          Skills and Interest
-        </div>
-      </mat-tab>
-      <mat-tab label="Contact Details">
-        <div>
-          Contact Details
+          <form [formGroup]="profileForm" (ngSubmit)="submit($event)">
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">FullName </mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="fullName"></mat-grid-tile>
+            </mat-grid-list><br> <br><br>
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Contact </mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="contact"></mat-grid-tile>
+            </mat-grid-list><br> <br><br>
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Email Id </mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="emailId"></mat-grid-tile>
+            </mat-grid-list><br> <br><br>
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">City </mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="city"></mat-grid-tile>
+            </mat-grid-list><br> <br><br>
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">College </mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="college"></mat-grid-tile>
+            </mat-grid-list><br> <br><br>
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Skills</mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1">
+                <input [(ngModel)]="skillValue" formControlName="skills" (keyup.enter)="addedText(skillValue)"><br>
+                <ng-container *ngFor="let val of labelList"> <label> {{val}}</label>
+                  <i class="material-icons" (click)="removeLabel(val)"> close
+                  </i>
+                </ng-container>
+
+              </mat-grid-tile>
+            </mat-grid-list>
+
+          </form>
         </div>
       </mat-tab>
     </mat-tab-group>
