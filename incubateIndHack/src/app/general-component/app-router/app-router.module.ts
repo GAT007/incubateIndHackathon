@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
-import { ContactDetailsComponent } from '../../userModule/contact-details/contact-details.component';
-import { ExampleComponent } from '../../userModule/example/example.component';
+import { UserDashboardComponent } from '../../userModule/user-dashboard.component';
+import { ExampleComponent } from '../../example/example.component';
 import { LoginComponent } from "../../login/login.component";
 import { SignUpComponent } from "../../sign-up/sign-up.component";
 import { AdminDashboardComponent } from "../../admin-module/admin-dashboard/admin-dashboard.component";
@@ -12,8 +12,8 @@ export const APP_ROUTES: Routes = [
     component: LoginComponent
   },
   {
-    path: "app/contactDetails",
-    component: ContactDetailsComponent
+    path: "app/userDashboard",
+    component: UserDashboardComponent
   },
   {
     path: "app/example",
