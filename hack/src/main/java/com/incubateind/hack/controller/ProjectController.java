@@ -5,6 +5,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,18 +23,21 @@ public class ProjectController {
 	@Autowired
 	private ProjectRepository projectRepository;
 	
+	@CrossOrigin
 	@GetMapping("/projects")
 	public Page<Project> getAllProjects(Pageable pageable)
 	{
 		return projectRepository.findAll(pageable);
 	}
 	
+	@CrossOrigin
 	@PostMapping("/projects")
 	public Project createProject(@Valid @RequestBody Project project)
 	{
 		return projectRepository.save(project);
 	}
 	
+	@CrossOrigin
 	@PutMapping("/projects/{projectId}")
 	public Project updateProject(@PathVariable Long projectId, @Valid @RequestBody Project postRequest)
 	{

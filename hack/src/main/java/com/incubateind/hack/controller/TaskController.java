@@ -5,6 +5,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,11 +27,13 @@ public class TaskController {
 	@Autowired
 	private ProjectRepository projectRepository;
 
+	@CrossOrigin
 	@GetMapping("/projects/{projectId}/tasks")
 	public Page<Task> getAllTasksByProjectId(@PathVariable(value = "projectId") Long projectId, Pageable pageable) {
 		return taskRepository.findByProjectId(projectId, pageable);
 	}
 
+	@CrossOrigin
 	@PostMapping("/projects/{projectId}/tasks")
 	public Task createTask(@PathVariable (value = "projectId") Long projectId, @Valid @RequestBody Task task) {
 		return taskRepository.findById(projectId).map(project -> {
@@ -39,6 +42,7 @@ public class TaskController {
 		}).orElseThrow(()-> new ResourceNotFoundException("Project id " + projectId + "Not Found!"));
 	}
 
+	@CrossOrigin
 	@PutMapping("/projects/{projectId}/tasks/{taskId}")
 	public Task updateTask(@PathVariable (value="projectId") Long projectId, @PathVariable (value="taskId") Long taskId
 			,@Valid @RequestBody Task taskRequest) {
