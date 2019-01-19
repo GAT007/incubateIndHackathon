@@ -36,10 +36,10 @@ public class TaskController {
 	@CrossOrigin
 	@PostMapping("/projects/{projectId}/tasks")
 	public Task createTask(@PathVariable (value = "projectId") Long projectId, @Valid @RequestBody Task task) {
-		return taskRepository.findById(projectId).map(project -> {
+		return projectRepository.findById(projectId).map(project -> {
 			task.setProject(project);
 			return taskRepository.save(task);
-		}).orElseThrow(()-> new ResourceNotFoundException("Project id " + projectId + "Not Found!"));
+		}).orElseThrow(()-> new ResourceNotFoundException("Project id " + projectId + " Not Found!"));
 	}
 
 	@CrossOrigin
