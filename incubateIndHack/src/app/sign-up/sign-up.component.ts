@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators, NgModel } from '@angular/forms';
-
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,7 +14,8 @@ export class SignUpComponent implements OnInit {
   userSignUpForm:FormGroup;
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) { 
     
   }
@@ -36,11 +37,11 @@ export class SignUpComponent implements OnInit {
   }
 
   onAdminSignUp() {
-
+    this.router.navigate(["app/adminDashboard"]);
   }
 
   onUserSignUp() {
-
+    this.router.navigate(["app/contactDetails"]);
   }
 
   redirect(){

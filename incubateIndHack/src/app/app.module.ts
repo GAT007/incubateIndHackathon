@@ -20,13 +20,17 @@ import { GetService } from './general-component/services/get.service';
 import { PostService } from './general-component/services/post.service';
 import {HttpModule} from '@angular/http';
 
+import { LoginComponent } from "./login/login.component";
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { AdminDashboardComponent } from './admin-module/admin-dashboard/admin-dashboard.component'
 @NgModule({
   declarations: [
     AppComponent,
     UserDashboardComponent,
     ExampleComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    AdminDashboardComponent
     
   ],
   imports: [

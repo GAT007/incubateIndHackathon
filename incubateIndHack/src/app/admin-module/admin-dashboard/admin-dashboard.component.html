@@ -1,0 +1,140 @@
+<mat-tab-group>
+
+  <mat-tab label="Profile">
+      <div>
+        <div *ngIf="!viewProfile">
+          <form [formGroup]="adminProfileForm" (ngSubmit)="saveProfile($event)">            
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Full Name: </mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="fullName"></mat-grid-tile>
+            </mat-grid-list><br> <br><br>
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Contact No: </mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="contactNo"></mat-grid-tile>
+            </mat-grid-list><br> <br><br>
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Email Id: </mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="emailId"></mat-grid-tile>
+            </mat-grid-list><br> <br><br>
+            <mat-grid-list class="nameHeader">
+                <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">
+                  <button class="editProfile" (click)="cancelProfile()">Cancel</button>
+                </mat-grid-tile>
+                <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">
+                  <button class="saveProfile" type="submit">Save Profile</button>
+                </mat-grid-tile>
+            </mat-grid-list>
+          </form>
+        </div>
+        <div *ngIf="viewProfile">
+          <mat-grid-list class="nameHeader">
+            <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Full Name: </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="1"> FullName </mat-grid-tile>
+          </mat-grid-list>
+          <br><br><br>
+          <mat-grid-list class="nameHeader">
+            <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Contact No: </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="1"> ContactNo</mat-grid-tile>
+          </mat-grid-list>
+          <br><br><br>
+          <mat-grid-list class="nameHeader">
+            <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Email Id: </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="1">EmailId</mat-grid-tile>
+          </mat-grid-list>
+          <br><br><br>
+          <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="2" rowspan="1" class="filterHeader">
+                <button class="editProfile" (click)="editProfile()">Edit Profile</button>
+              </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+      </div>
+  </mat-tab>
+
+  <mat-tab label="Projects">
+    <div class="projects">
+      <mat-accordion>
+        <!--<div *ngFor=""> -->
+            <mat-expansion-panel class="expansionPanel">
+              <mat-expansion-panel-header class="expansionHeader">
+                <mat-panel-title>
+                  Project Name: ProjectName
+                </mat-panel-title>
+                <mat-panel-description>
+                      Description: ProjectDesc
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              
+              <div class="task">        
+                <mat-accordion>
+                  <!--<div *ngFor=""> -->
+                      <mat-expansion-panel class="expansionPanel">
+                        <mat-expansion-panel-header class="expansionHeader">
+                          <mat-panel-title>
+                              Task Name: Task1
+                          </mat-panel-title>
+                          <mat-panel-description>
+                              Task Description: TaskDesc
+                          </mat-panel-description>
+                        </mat-expansion-panel-header>
+                        
+                        <div class="task-details">
+                            <div *ngIf="viewTask">
+                              
+                                <mat-grid-list class="nameHeader">
+                                    <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Deadline: </mat-grid-tile>
+                                    <mat-grid-tile colspan="1" rowspan="1">Deadline</mat-grid-tile>
+                                </mat-grid-list><br> <br><br>
+                                <mat-grid-list class="nameHeader">
+                                    <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Score: </mat-grid-tile>
+                                    <mat-grid-tile colspan="1" rowspan="1">Score</mat-grid-tile>
+                                </mat-grid-list><br> <br><br>
+                                <mat-grid-list class="nameHeader">
+                                    <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Status: </mat-grid-tile>
+                                    <mat-grid-tile colspan="1" rowspan="1">Status</mat-grid-tile>
+                                </mat-grid-list><br> <br><br>
+                                <mat-grid-list class="nameHeader">
+                                    <mat-grid-tile colspan="2" rowspan="1" class="filterHeader">
+                                      <button class="editTask" (click)="editTask()">Edit Task</button>
+                                    </mat-grid-tile>
+                                </mat-grid-list>
+                            </div>
+            
+                            <div *ngIf="!viewTask">
+                              <form [formGroup]="taskForm" (ngSubmit)="saveTask($event)">
+                                  <mat-grid-list class="nameHeader">
+                                    <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Deadline: </mat-grid-tile>
+                                    <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="taskDeadline"></mat-grid-tile>
+                                  </mat-grid-list><br> <br><br>
+                                  <mat-grid-list class="nameHeader">
+                                    <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Score: </mat-grid-tile>
+                                    <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="taskScore"></mat-grid-tile>
+                                  </mat-grid-list><br> <br><br>
+                                  <mat-grid-list class="nameHeader">
+                                    <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Status: </mat-grid-tile>
+                                    <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="taskStatus"></mat-grid-tile>
+                                  </mat-grid-list><br> <br><br>
+                                  <mat-grid-list class="nameHeader">
+                                      <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">
+                                        <button class="editTask" (click)="cancelTask()">Cancel</button>
+                                      </mat-grid-tile>
+                                      <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">
+                                        <button class="saveTask" type="submit">Save Task</button>
+                                      </mat-grid-tile>
+                                  </mat-grid-list>
+                              </form>
+                            </div>
+                        </div>
+
+                      </mat-expansion-panel>
+                    <!-- </div> -->
+                </mat-accordion> 
+              </div>
+
+            </mat-expansion-panel>
+        <!-- </div> -->  
+      </mat-accordion>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>
