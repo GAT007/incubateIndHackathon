@@ -19,6 +19,11 @@ export class ContactDetailsComponent implements OnInit {
   
   ngOnInit() {
     this.profileForm = this.formBuilder.group({
+      fullName: [null, [Validators.required, Validators.pattern("[a-zA-Z0-9-]+")]],
+      contact: [null, [Validators.required, Validators.pattern("[a-zA-Z0-9-]+")]],
+      emailId: [null, [Validators.required, Validators.pattern("[a-zA-Z0-9-]+")]],
+      city: [null, [Validators.required, Validators.pattern("[a-zA-Z0-9-]+")]],
+      college: [null, [Validators.required, Validators.pattern("[a-zA-Z0-9-]+")]],
       skills: [null, [Validators.required, Validators.pattern("[a-zA-Z0-9-]+")]],
       // interest: [null, [Validators.required, Validators.minLength(5)]],
 
@@ -36,6 +41,11 @@ export class ContactDetailsComponent implements OnInit {
     var skillVal=this.skillValue;
     this.skillValue="";
     this.labelList.push(skillVal);
+  }
+
+  removeLabel(val){
+    let deleteVal=this.labelList.indexOf(val);
+    this.labelList.splice(deleteVal,1);
   }
 
 }

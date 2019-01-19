@@ -27,19 +27,38 @@
       <mat-tab label="Profile">
         <div>
           <form [formGroup]="profileForm" (ngSubmit)="submit($event)">
-            <div class="form-group">
-              <label>Skills</label>
-              <div *ngIf="add">
-                <input [(ngModel)]="skillValue" formControlName="skills" (keyup.enter)="addedText(skillValue)">
-              </div>
-              <div *ngFor="let val of labelList"> <label> {{val}}</label>
-              </div>
-              <div *ngIf="labelList!=='' && labelList.length!==0">
-                <i class="material-icons" (click)="addLabel()">
-                  add
-                </i>
-              </div>
-            </div>
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">FullName </mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="fullName"></mat-grid-tile>
+            </mat-grid-list><br> <br><br>
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Contact </mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="contact"></mat-grid-tile>
+            </mat-grid-list><br> <br><br>
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Email Id </mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="emailId"></mat-grid-tile>
+            </mat-grid-list><br> <br><br>
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">City </mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="city"></mat-grid-tile>
+            </mat-grid-list><br> <br><br>
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">College </mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="college"></mat-grid-tile>
+            </mat-grid-list><br> <br><br>
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Skills</mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1">
+                <input [(ngModel)]="skillValue" formControlName="skills" (keyup.enter)="addedText(skillValue)"><br>
+                <ng-container *ngFor="let val of labelList"> <label> {{val}}</label>
+                  <i class="material-icons" (click)="removeLabel(val)"> close
+                  </i>
+                </ng-container>
+
+              </mat-grid-tile>
+            </mat-grid-list>
+
           </form>
         </div>
       </mat-tab>
