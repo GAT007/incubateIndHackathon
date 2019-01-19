@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormBuilder, FormGroup, Validators, NgModel } from '@angular/forms';
+
 
 @Component({
   selector: 'app-sign-up',
@@ -7,9 +9,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+  
+  adminSignUpForm: FormGroup;
+  userSignUpForm:FormGroup;
+
+  constructor(
+    private formBuilder: FormBuilder
+  ) { 
+    
+  }
 
   ngOnInit() {
+    this.adminSignUpForm = this.formBuilder.group({
+      UserId: [null, [Validators.required, Validators.pattern("[a-zA-Z0-9-]+")]],
+      EmailId: [null, [Validators.required, Validators.minLength(5)]],
+      Password: [null, [Validators.required, Validators.minLength(5)]],
+      ConfirmPassword: [null, [Validators.required, Validators.minLength(5)]]
+  });
+
+  this.userSignUpForm = this.formBuilder.group({
+      UserId: [null, [Validators.required, Validators.pattern("[a-zA-Z0-9-]+")]],
+      EmailId: [null, [Validators.required, Validators.minLength(5)]],
+      Password: [null, [Validators.required, Validators.minLength(5)]],
+      ConfirmPassword: [null, [Validators.required, Validators.minLength(5)]]
+  });
   }
 
   onAdminSignUp() {
@@ -17,6 +40,6 @@ export class SignUpComponent implements OnInit {
   }
 
   onUserSignUp() {
-    
+
   }
 }

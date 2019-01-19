@@ -6,14 +6,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: "login",
   templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"],
+  styleUrls: ["./login.component.scss"],
 })
 
 export class LoginComponent implements OnInit {
 
     adminLoginForm: FormGroup;
     userLoginForm:FormGroup;
-    isLinear : boolean = true;
     
     constructor(
         private formBuilder: FormBuilder,
@@ -33,12 +32,14 @@ export class LoginComponent implements OnInit {
     }
 
     onAdminLogin(event) {   
-        this.router.navigate(["/app/example"]);
+        this.router.navigate(["/app/"]);
     }    
 
     onUserLogin(event) {
 
     }
 
-
+    openSignUp() {
+        this.router.navigate(["/app/signup"]);
+    }
 }

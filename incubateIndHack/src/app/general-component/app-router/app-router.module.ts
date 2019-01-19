@@ -19,7 +19,7 @@ export const APP_ROUTES: Routes = [
     component: ExampleComponent
   },
   {
-    path: "app/sign-up",
+    path: "app/signup",
     component: SignUpComponent
   }
 ];
