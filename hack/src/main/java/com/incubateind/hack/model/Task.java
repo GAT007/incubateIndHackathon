@@ -53,6 +53,12 @@ public class Task extends AuditModel{
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JsonIgnore
 	private Project project;
+	
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "user_id", nullable = true)
+	@OnDelete(action = OnDeleteAction.NO_ACTION)
+	@JsonIgnore
+	private User user;
 
 	public Long getId() {
 		return id;
@@ -119,7 +125,14 @@ public class Task extends AuditModel{
 	}
 
 	public void setProject(Task project2) {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub		
 	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}	
 }
