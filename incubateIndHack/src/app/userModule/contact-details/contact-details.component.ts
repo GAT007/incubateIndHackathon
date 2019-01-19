@@ -11,6 +11,7 @@ export class ContactDetailsComponent implements OnInit {
   constructor(    private router: Router,) { }
 
   ngOnInit() {
+    console.log("Inside contact details comp")
   }
 
 

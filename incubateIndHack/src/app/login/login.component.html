@@ -1,0 +1,39 @@
+<div class="header">
+    <h1>Welcome to Incubate Ind Campus Ambassador Program</h1>
+</div>
+
+<div class="login">
+    <mat-tab-group>
+        <mat-tab label="Admin">
+            <form [formGroup]="adminLoginForm" (ngSubmit)="onAdminLogin($event)">
+                <div class="login-fields">
+                    <mat-form-field>
+                        <input matInput required formControlName="UserId"  placeholder="User Id">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput required formControlName="Password"  placeholder="Password">
+                    </mat-form-field>
+                    <button type="submit" class="login-submit">Log In</button>
+                </div>
+            </form>
+        </mat-tab>
+
+        <mat-tab label="User">
+            <form [formGroup]="userLoginForm" (ngSubmit)="onUserLogin($event)">
+                <div class="login-fields">
+                    <mat-form-field>
+                        <input matInput required formControlName="UserId"  placeholder="User Id">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput required formControlName="Password"  placeholder="Password">
+                    </mat-form-field>
+                    <button type="submit" class="login-submit">Log In</button>
+                </div>
+            </form>
+        </mat-tab>
+    </mat-tab-group>
+
+    <div class="sign-up">
+        <div (click)="openSignUp()">Not registered? Sign up!</div> 
+    </div>
+</div>
