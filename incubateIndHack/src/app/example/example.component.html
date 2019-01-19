@@ -1,0 +1,47 @@
+<mat-accordion>
+  <mat-expansion-panel class="expansionPanel">
+    <mat-expansion-panel-header class="expansionHeader">
+      <mat-panel-title>
+        Project Name
+      </mat-panel-title>
+      <mat-panel-description>
+        Deadline
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <mat-accordion>
+      <mat-expansion-panel class="expansionPanel">
+        <mat-expansion-panel-header class="expansionHeader">
+          <mat-panel-title>
+            Task Name1
+          </mat-panel-title>
+          <mat-panel-description>
+            Deadline
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-card>Description</mat-card>
+        <mat-card>Points</mat-card>
+
+      </mat-expansion-panel>
+
+      <mat-expansion-panel class="expansionPanel">
+        <mat-expansion-panel-header class="expansionHeader">
+          <mat-panel-title>
+            Task Name2
+          </mat-panel-title>
+          <mat-panel-description>
+            Deadline
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-card>Description</mat-card>
+        <mat-card>Points</mat-card>
+
+      </mat-expansion-panel>
+      
+    </mat-accordion>
+
+    <div class="example-button-row1" style="padding-top:10px;">
+      <button mat-raised-button color="primary" type="submit" (click)="taskSave()">Submit</button>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>

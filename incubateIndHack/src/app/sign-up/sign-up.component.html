@@ -1,46 +1,65 @@
-
-
 <div class="signup">
   <mat-tab-group>
-      <mat-tab label="Admin">
-          <form [formGroup]="adminSignUpForm" (ngSubmit)="onAdminSignUp($event)">
-              <div class="signup-fields">
-                  <mat-form-field>
-                    <input matInput required formControlName="UserId"  placeholder="User Id">
-                  </mat-form-field>
-                  <mat-form-field>
-                    <input matInput required formControlName="EmailId"  placeholder="Email Id">
-                  </mat-form-field>
-                  <mat-form-field>
-                    <input matInput required formControlName="Password"  placeholder="Password">
-                  </mat-form-field>
-                  <mat-form-field>
-                      <input matInput required formControlName="ConfirmPassword"  placeholder="Confirm Password">
-                  </mat-form-field>
-                  <button type="submit" class="signup-submit">Sign Up</button>
-              </div>
-          </form>
-      </mat-tab>
+    <mat-tab label="Admin">
+      <form [formGroup]="adminSignUpForm" (ngSubmit)="onAdminSignUp($event)">
+        <div class="signup-fields">
+          <mat-grid-list class="nameHeader">
+            <mat-grid-tile colspan="1" rowspan="1" class="filterHeader"> User Name </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="1"> <input matInput required formControlName="UserId" placeholder="User Id">
+            </mat-grid-tile>
+          </mat-grid-list><br> <br>
+          <mat-grid-list class="nameHeader">
+            <mat-grid-tile colspan="1" rowspan="1" class="filterHeader"> Email Id </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="1"> <input matInput required formControlName="EmailId" placeholder="Email Id">
+            </mat-grid-tile>
+          </mat-grid-list><br> <br>
+          <mat-grid-list class="nameHeader">
+            <mat-grid-tile colspan="1" rowspan="1" class="filterHeader"> Password </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="1"> <input matInput required formControlName="Password" placeholder="Password">
+            </mat-grid-tile>
+          </mat-grid-list><br> <br>
+          <mat-grid-list class="nameHeader">
+            <mat-grid-tile colspan="1" rowspan="1" class="filterHeader"> Confirm Password </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="1"> <input matInput required formControlName="ConfirmPassword"
+                placeholder="Confirm Password">
+            </mat-grid-tile>
+          </mat-grid-list><br> <br>
 
-      <mat-tab label="User">
-          <form [formGroup]="userSignUpForm" (ngSubmit)="onUserSignUp($event)">
-              <div class="signup-fields">
-                <mat-form-field>
-                  <input matInput required formControlName="UserId"  placeholder="User Id">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput required formControlName="EmailId"  placeholder="Email Id">
-                </mat-form-field>
-                <mat-form-field>
-                  <input matInput required formControlName="Password"  placeholder="Password">
-                </mat-form-field>
-                <mat-form-field>
-                    <input matInput required formControlName="ConfirmPassword"  placeholder="Confirm Password">
-                </mat-form-field>
-                <button type="submit" class="signup-submit">Sign Up</button>
-              </div>
-          </form>
-      </mat-tab>
+          <button type="submit" class="signup-submit">Sign Up  </button>
+          <button type="button" class="signup-submit" (click)="redirect()">  Back</button>
+        </div>
+      </form>
+    </mat-tab>
+
+    <mat-tab label="User">
+      <form [formGroup]="userSignUpForm" (ngSubmit)="onUserSignUp($event)">
+        <div class="signup-fields">
+          <mat-grid-list class="nameHeader">
+            <mat-grid-tile colspan="1" rowspan="1" class="filterHeader"> User Name </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="1"> <input matInput required formControlName="UserId" placeholder="User Id">
+            </mat-grid-tile>
+          </mat-grid-list><br> <br>
+          <mat-grid-list class="nameHeader">
+            <mat-grid-tile colspan="1" rowspan="1" class="filterHeader"> Email Id </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="1"> <input matInput required formControlName="EmailId" placeholder="Email Id">
+            </mat-grid-tile>
+          </mat-grid-list><br> <br>
+          <mat-grid-list class="nameHeader">
+            <mat-grid-tile colspan="1" rowspan="1" class="filterHeader"> Password </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="1"> <input matInput required formControlName="Password" placeholder="Password">
+            </mat-grid-tile>
+          </mat-grid-list><br> <br>
+          <mat-grid-list class="nameHeader">
+            <mat-grid-tile colspan="1" rowspan="1" class="filterHeader"> Confirm Password </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="1"> <input matInput required formControlName="ConfirmPassword"
+                placeholder="Confirm Password">
+            </mat-grid-tile>
+          </mat-grid-list><br> <br>
+          <button type="submit" class="signup-submit">Sign Up  </button>
+          <button type="button" class="signup-submit" (click)="redirect()">  Back</button>
+        </div>
+      </form>
+    </mat-tab>
   </mat-tab-group>
-  
+
 </div>

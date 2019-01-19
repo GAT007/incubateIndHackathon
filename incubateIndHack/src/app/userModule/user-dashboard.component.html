@@ -19,6 +19,23 @@
               </mat-expansion-panel-header>
               <mat-card>Description</mat-card>
               <mat-card>Points</mat-card>
+              <mat-grid-list class="dropHeader">
+                <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Status </mat-grid-tile>
+                <mat-grid-tile colspan="1" rowspan="1">
+                  <select class="inptSelect">
+                    <option [value]="" class="gridText">Select One.</option>
+                    <option class="gridText">
+                      Completed
+                    </option>
+                    <option class="gridText">
+                      Not Completed
+                    </option>
+
+                  </select></mat-grid-tile>
+              </mat-grid-list>
+              <div class="example-button-row1" style="padding-top:10px;">
+                  <button mat-raised-button color="primary" type="submit" (click)="taskSave()">Submit</button>
+                </div>
             </mat-expansion-panel>
           </mat-accordion>
         </div>
@@ -29,7 +46,8 @@
           <form [formGroup]="profileForm" (ngSubmit)="submit($event)">
             <mat-grid-list class="nameHeader">
               <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">FullName </mat-grid-tile>
-              <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="fullName"></mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="fullName">
+              </mat-grid-tile>
             </mat-grid-list><br> <br><br>
             <mat-grid-list class="nameHeader">
               <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Contact </mat-grid-tile>
@@ -48,17 +66,31 @@
               <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="filterName" formControlName="college"></mat-grid-tile>
             </mat-grid-list><br> <br><br>
             <mat-grid-list class="nameHeader">
-              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Skills</mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Skills </mat-grid-tile>
               <mat-grid-tile colspan="1" rowspan="1">
-                <input [(ngModel)]="skillValue" formControlName="skills" (keyup.enter)="addedText(skillValue)"><br>
+                <input [(ngModel)]="skillValue" formControlName="skills" (keyup.enter)="addedSkillText(skillValue)"><br>
                 <ng-container *ngFor="let val of labelList"> <label> {{val}}</label>
-                  <i class="material-icons" (click)="removeLabel(val)"> close
+                  <i class="material-icons" (click)="removeSkillLabel(val)"> close
+                  </i>
+                </ng-container>
+
+              </mat-grid-tile>
+            </mat-grid-list><br> <br>
+            <mat-grid-list class="nameHeader">
+              <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Interests </mat-grid-tile>
+              <mat-grid-tile colspan="1" rowspan="1">
+                <input [(ngModel)]="interestValue" formControlName="interest" (keyup.enter)="addInterestText(interestValue)"><br>
+                <ng-container *ngFor="let value of labelInterestList"> <label> {{value}}</label>
+                  <i class="material-icons" (click)="removeInterestLabel(val)"> close
                   </i>
                 </ng-container>
 
               </mat-grid-tile>
             </mat-grid-list>
 
+            <div class="example-button-row" style=" padding-top:10px;">
+              <button mat-raised-button color="primary" type="submit">Submit</button>
+            </div>
           </form>
         </div>
       </mat-tab>

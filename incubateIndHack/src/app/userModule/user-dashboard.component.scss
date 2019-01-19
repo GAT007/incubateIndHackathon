@@ -64,7 +64,21 @@ input{
   font-weight: bold;
 }
 
-.asd {
-  background:rgba(0,0,0,0);
-  border:none;
+.example-button-row button,
+.example-button-row a {
+ 
+  margin-right: 8px;
+  background-color:  rgb(119, 166, 236);
+}
+
+.example-button-row1 button,
+.example-button-row1 a {
+ 
+  margin-right: 8px;
+  background-color:  rgb(175, 173, 174);
+}
+
+.inptSelect{
+  margin-left: 15px;
+  
 }
