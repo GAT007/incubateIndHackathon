@@ -1,36 +1,48 @@
 package com.incubateind.hack.model;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
-import org.hibernate.annotations.OnDelete;
-import org.hibernate.annotations.OnDeleteAction;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.NaturalId;
+import org.hibernate.annotations.NaturalIdCache;
 
 @Entity
 @Table(name="skills")
+@NaturalIdCache
+@Cache (usage = org.hibernate.annotations.CacheConcurrencyStrategy.READ_WRITE)
+
 public class Skill {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull
+	@NaturalId
 	private String skillName;
 	
-	@ManyToOne(fetch = FetchType.LAZY, optional = false)
-	@JoinColumn(name = "user_id", nullable = false)
-	@OnDelete(action= OnDeleteAction.CASCADE)
-	@JsonIgnore
-	private User user;
+	@OneToMany(
+	        mappedBy = "skill",
+	        cascade = CascadeType.ALL,
+	        orphanRemoval = true
+	    )
+	    private List<Rating> users = new ArrayList<>();
+	
+	public Skill() {
+    }
+ 
+    public Skill(String name) {
+        this.skillName = name;
+    }
 
 	public Long getId() {
 		return id;
@@ -47,16 +59,25 @@ public class Skill {
 	public void setSkillName(String skillName) {
 		this.skillName = skillName;
 	}
-
-	public User getUser() {
-		return user;
+	
+	public List<Rating> getUsers() {
+		return users;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUsers(List<Rating> users) {
+		this.users = users;
 	}
-	
-	
-	
 
+	@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Skill skill = (Skill) o;
+        return Objects.equals(skillName, skill.skillName);
+    }
+ 
+    @Override
+    public int hashCode() {
+        return Objects.hash(skillName);
+    }
 }

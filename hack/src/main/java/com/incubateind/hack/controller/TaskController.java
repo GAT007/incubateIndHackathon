@@ -17,6 +17,7 @@ import com.incubateind.hack.exception.ResourceNotFoundException;
 import com.incubateind.hack.model.Task;
 import com.incubateind.hack.repository.ProjectRepository;
 import com.incubateind.hack.repository.TaskRepository;
+import com.incubateind.hack.repository.UserRepository;
 
 @RestController
 public class TaskController {
@@ -26,6 +27,9 @@ public class TaskController {
 
 	@Autowired
 	private ProjectRepository projectRepository;
+	
+	@Autowired
+	private UserRepository userRepository;
 
 	@CrossOrigin
 	@GetMapping("/projects/{projectId}/tasks")
@@ -47,7 +51,7 @@ public class TaskController {
 	public Task updateTask(@PathVariable (value="projectId") Long projectId, @PathVariable (value="taskId") Long taskId
 			,@Valid @RequestBody Task taskRequest) {
 		if(!projectRepository.existsById(projectId)) {
-			throw new ResourceNotFoundException("Project Id " + projectId + "Not Found!");
+			throw new ResourceNotFoundException("Project Id " + projectId + " Not Found!");
 		}
 		
 		return taskRepository.findById(taskId).map( task -> {
@@ -58,7 +62,19 @@ public class TaskController {
 			task.setTitle(taskRequest.getTitle());
 			task.setStatus(false);
 			return taskRepository.save(task);
-		}).orElseThrow(()->new ResourceNotFoundException("Task Id" + taskId + "Not Found!"));
+		}).orElseThrow(()->new ResourceNotFoundException("Task Id" + taskId + " Not Found!"));
 	}
+	
+	/*@PutMapping("/users/{userId}/tasks")
+	public Task assignTaskToUserId(@PathVariable (value="userId") Long userId, @PathVariable (value="taskId") Long taskId,
+			@Valid @RequestBody Task taskRequest) {
+		if(!userRepository.existsById(userId)) {
+			throw new ResourceNotFoundException("User Id " + userId + "Not Found!");
+		}
+		return taskRepository.findById(taskId).map(user -> {
+			task.setUser(user);
+			return taskRepository.save(task);
+		}).orElseThrow(()-> new ResourceNotFoundException("Task id" + taskId + "Not found!"));
+	}*/
 
 }
