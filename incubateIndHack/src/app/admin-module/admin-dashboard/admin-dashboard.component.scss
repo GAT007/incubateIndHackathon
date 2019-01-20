@@ -1,70 +1,79 @@
 .containerClass {
-    height: auto;
-  }
-  
-  
-  .iconClass {
-    align-items: center;
-    justify-content: center;
-    margin-top: 4px;
-    /* padding-top: 10px; */
-    vertical-align: bottom;
-  }
-  
-  .bodyClass {
-    height: auto;
-  }
-  
-  
-  .hamburgerMenu{
-     background-color:  rgba(30, 114, 240, 0.89);
-     height: 100%;
-     width:auto;
-  
-  }
-  
-  .example-small-box, .example-large-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 16px;
-    padding: 16px;
-    border-radius: 8px;
-  }
-  
-  .example-small-box {
-    height: 100px;
-    width: 100px;
-  }
-  
-  .example-large-box {
-    height: 300px;
-    width: 300px;
-  }
-  
-  
-  .expansionPanel{
-    background-color: rgb(181, 206, 243);
-  }
-  
-  .expansionHeader{
-    background-color: rgb(119, 166, 236);
-  }
-  
-  input{
-    
-    font-size: 16px;
-    padding: 0;
-    border: 2px solid #ccc;
-    // border-left: 0;
-    width:30%;
-    color: #666;
-    border-radius: 0 7px 7px 0;
-    font-family: 'PT Sans', sans-serif;
-    font-weight: bold;
-  }
-  
-  .asd {
-    background:rgba(0,0,0,0);
-    border:none;
-  }
+  height: auto;
+}
+
+
+.iconClass {
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+  /* padding-top: 10px; */
+  vertical-align: bottom;
+}
+
+.bodyClass {
+  height: auto;
+}
+
+
+.hamburgerMenu {
+  background-color: rgba(30, 114, 240, 0.89);
+  height: 100%;
+  width: auto;
+
+}
+
+.example-small-box,
+.example-large-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.example-small-box {
+  height: 100px;
+  width: 100px;
+}
+
+.example-large-box {
+  height: 300px;
+  width: 300px;
+}
+
+
+.expansionPanel {
+  background-color: rgb(181, 206, 243);
+}
+
+.expansionHeader {
+  background-color: rgb(119, 166, 236);
+}
+
+input {
+
+  font-size: 16px;
+  padding: 0;
+  border: 2px solid #ccc;
+  // border-left: 0;
+  width: 30%;
+  color: #666;
+  border-radius: 0 7px 7px 0;
+  font-family: 'PT Sans', sans-serif;
+  font-weight: bold;
+}
+
+.asd {
+  background: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.pName {
+  margin-left: 10px;
+}
+
+.pDesc {
+  margin-left: 21px;
+}

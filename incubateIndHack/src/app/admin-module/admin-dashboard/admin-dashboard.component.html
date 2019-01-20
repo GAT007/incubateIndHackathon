@@ -51,25 +51,57 @@
       </div>
   </mat-tab>
 
+  <mat-tab label="Create Projects">
+      <div class="Createprojects">
+          <form [formGroup]="projectProfileForm" (ngSubmit)="saveProfile($event)">   
+        <mat-grid-list class="nameHeader">
+          <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Project Name: </mat-grid-tile>
+          <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="pName" formControlName="pName"> </mat-grid-tile>
+        </mat-grid-list>
+        <br><br><br>
+        <mat-grid-list class="nameHeader">
+          <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Description: </mat-grid-tile>
+          <mat-grid-tile colspan="1" rowspan="1"> <input type="text" class="pDesc" formControlName="pDesc"></mat-grid-tile>
+        </mat-grid-list>
+        <br><br><br>
+        <mat-grid-list class="nameHeader">
+            <mat-grid-tile colspan="1" rowspan="1" class="skills">Add Tasks </mat-grid-tile>
+            <mat-grid-tile colspan="1" rowspan="1">
+              <input [(ngModel)]="skillValue" formControlName="skills" (keyup.enter)="addedSkillText(skillValue)"><br>
+              <ng-container *ngFor="let val of labelList"> <label class="valueAdded"> {{val}}</label>
+                <i class="material-icons closeIcon" (click)="removeSkillLabel(val)"> close
+                </i>
+              </ng-container>
+
+            </mat-grid-tile>
+          </mat-grid-list><br> <br>
+        <mat-grid-list class="nameHeader">
+          <mat-grid-tile colspan="2" rowspan="1" class="filterHeader">
+            <button class="editProfile" (click)="saveProject()">Create Project</button>
+          </mat-grid-tile>
+      </mat-grid-list></form>
+      </div>
+    </mat-tab>
+
   <mat-tab label="Projects">
     <div class="projects">
       <mat-accordion>
         <!--<div *ngFor=""> -->
-            <mat-expansion-panel class="expansionPanel">
+            <mat-expansion-panel *ngFor="let resp of projectResponse" class="expansionPanel">
               <mat-expansion-panel-header class="expansionHeader">
                 <mat-panel-title>
-                  Project Name: ProjectName
+                  Project Name:{{ resp.title}} 
                 </mat-panel-title>
                 <mat-panel-description>
-                      Description: ProjectDesc
+                      Description:{{ resp.description}} 
                 </mat-panel-description>
               </mat-expansion-panel-header>
               
               <div class="task">        
-                <mat-accordion>
+                <mat-accordion >
                   <!--<div *ngFor=""> -->
                       <mat-expansion-panel class="expansionPanel">
-                        <mat-expansion-panel-header class="expansionHeader">
+                        <mat-expansion-panel-header class="expansionHeader"  (click)="getTaskFromProject(resp.title)">
                           <mat-panel-title>
                               Task Name: Task1
                           </mat-panel-title>
@@ -136,5 +168,7 @@
       </mat-accordion>
     </div>
   </mat-tab>
+
+
 
 </mat-tab-group>

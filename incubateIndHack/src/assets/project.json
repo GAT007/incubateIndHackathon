@@ -6,6 +6,13 @@
             "id": 1,
             "title": "Project 1",
             "description": "Project 1 Description"
+        },
+        {
+            "createdAt": "2019-01-19T21:30:09.000+0000",
+            "updatedAt": "2019-01-19T21:30:09.000+0000",
+            "id": 1,
+            "title": "Project 2",
+            "description": "Project 2 Description"
         }
     ],
     "pageable": {

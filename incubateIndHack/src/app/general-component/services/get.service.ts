@@ -40,11 +40,11 @@ export class GetService {
     if (response.status < 200 || response.status >= 300) {
     } else {
       if (response.text()) {
-        const body = response.json();
-        if (body && body.content) {
-          return body.content;
+        const _body = response.json();
+        if (_body && _body.content) {
+          return _body.content;
         }
-        return body || {};
+        return _body || {};
       } else {
         return {};
       }

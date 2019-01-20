@@ -79,6 +79,68 @@ input{
 }
 
 .inptSelect{
-  margin-left: 15px;
+  margin-left: 15px !important;
   
+}
+
+.fullNameClass{
+  margin-right: 34px;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.fullNameVal{
+  margin-top: 5px;
+}
+
+.contactName{
+  margin-right: 47px;
+    margin-left: 10px;
+}
+.emailId{
+  margin-right: 41px;
+    margin-left: 10px;
+}
+
+.city{
+  margin-left: 10px;
+  margin-right: 68px;
+}
+
+.college{
+  margin-left: 10px;
+  margin-right: 46px;
+}
+
+.skills{
+  margin-left: 10px;
+  margin-right: 58px;
+}
+
+.interest{
+  margin-left: 10px;
+  margin-right: 40px;
+}
+
+.valueAdded{
+  font-size: 18px;
+  border: 0.5px solid black;
+  /* padding: 5px; */
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: rgb(106, 183, 219);
+  border-radius: 7px 7px 7px 7px;
+}
+
+.closeIcon{
+  margin-left: -17px;
+  margin-top: 19px;
+  font-size: 14px;
+  margin-right: 16px;
+}
+
+mat-card{
+  margin-bottom: 9px;
+    margin-top: -14px;
 }

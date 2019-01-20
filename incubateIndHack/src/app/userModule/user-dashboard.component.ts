@@ -32,7 +32,7 @@ export class UserDashboardComponent implements OnInit {
 
   });
     console.log("Inside contact details comp");
-    this.getProjects();
+    // this.getProjects();
   }
 
 
@@ -63,12 +63,12 @@ export class UserDashboardComponent implements OnInit {
     
   }
 
-   getProjects(){
+   getTask(){
       //   this.getService
       // .getJSON("/assets/image/getFilter.json")
       // .subscribe(
       //   response => {
-        this.getService.getData("http://blrlw6620:8080/projects").subscribe(
+        this.getService.getData("http://blrlw6620:8080/projects/1/tasks").subscribe(
           response => {
     
           this.projectResponse = response;
