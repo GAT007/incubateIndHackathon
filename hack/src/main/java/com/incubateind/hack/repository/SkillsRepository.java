@@ -10,6 +10,6 @@ import com.incubateind.hack.model.Skill;
 @Repository
 public interface SkillsRepository extends JpaRepository<Skill, Long>{
 	
-	Page<Skill> findByUserId(Long userId, Pageable pageable);
+//	Page<Skill> findByUserId(Long userId, Pageable pageable);
 	
 }

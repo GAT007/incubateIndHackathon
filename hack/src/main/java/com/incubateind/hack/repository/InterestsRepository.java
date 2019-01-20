@@ -10,6 +10,6 @@ import com.incubateind.hack.model.Interests;
 @Repository
 public interface InterestsRepository extends JpaRepository<Interests, Long>{
 	
-	Page<Interests> findByUserId(Long userId, Pageable pageable);
+//	Page<Interests> findByUserId(Long userId, Pageable pageable);
 
 }

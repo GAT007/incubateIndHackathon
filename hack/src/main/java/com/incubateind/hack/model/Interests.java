@@ -29,7 +29,7 @@ public class Interests {
                 CascadeType.PERSIST,
                 CascadeType.MERGE
             },
-            mappedBy = "tags")
+            mappedBy = "interests")
     private Set<User> users = new HashSet<>();
 
 	public Set<User> getUsers() {

@@ -60,7 +60,7 @@ public class User extends AuditModel
 	        cascade = CascadeType.ALL,
 	        orphanRemoval = true
 	    )
-	    private List<Rating> tags = new ArrayList<>();
+	    private List<Rating> skills = new ArrayList<>();
 	
 	@ManyToMany(fetch = FetchType.LAZY,
 			cascade = {
@@ -146,22 +146,23 @@ public class User extends AuditModel
 		this.task = task;
 	}
 
-	public List<Rating> getTags() {
-		return tags;
-	}
-
-	public void setTags(List<Rating> tags) {
-		this.tags = tags;
-	}
 	
 	public void addSkill(Skill skill) {
         Rating rating = new Rating(this, skill);
-        tags.add(rating);
+        skills.add(rating);
         skill.getUsers().add(rating);
     }
 	
+	public List<Rating> getSkills() {
+		return skills;
+	}
+
+	public void setSkills(List<Rating> skills) {
+		this.skills = skills;
+	}
+
 	public void removeSkill(Skill skill) {
-        for (Iterator<Rating> iterator = tags.iterator();
+        for (Iterator<Rating> iterator = skills.iterator();
              iterator.hasNext(); ) {
             Rating rating = iterator.next();
  
