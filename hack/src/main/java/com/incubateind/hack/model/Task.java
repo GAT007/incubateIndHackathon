@@ -48,6 +48,17 @@ public class Task extends AuditModel{
 	@NotNull
 	private Date deadlineDate;
 	
+	@NotNull
+	private String task_skill;	
+	
+	public String getTask_skill() {
+		return task_skill;
+	}
+
+	public void setTask_skill(String task_skill) {
+		this.task_skill = task_skill;
+	}
+
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "project_id", nullable = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
