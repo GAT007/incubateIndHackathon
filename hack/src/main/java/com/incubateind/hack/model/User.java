@@ -49,14 +49,14 @@ public class User extends AuditModel
 	
 	private boolean isAdmin;
 	
-	private String taskId;	
+	private String taskId_assignment;	
 	
 	public String getTaskId() {
-		return taskId;
+		return taskId_assignment;
 	}
 
 	public void setTaskId(String taskId) {
-		this.taskId = taskId;
+		this.taskId_assignment = taskId;
 	}
 
 	@ManyToOne(fetch = FetchType.LAZY, optional = true)

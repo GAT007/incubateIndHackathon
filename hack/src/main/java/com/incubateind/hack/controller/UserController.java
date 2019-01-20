@@ -52,17 +52,16 @@ public class UserController {
 		}).orElseThrow(() -> new ResourceNotFoundException("User Id " + userId + " not found!"));
 
 	}
-	
+
 	@CrossOrigin
 	@PutMapping("/users/{userId}/tasks/{taskId}")
-	public User assignTaskToUser(@PathVariable Long userId, @PathVariable Long taskId, @Valid @RequestBody Task task)
-	{
-		if(!taskRepository.existsById(taskId)) {
-			throw new ResourceNotFoundException("Task id " +taskId + " not found! ");
+	public User assignTaskToUser(@PathVariable Long userId, @PathVariable Long taskId, @Valid @RequestBody Task task) {
+		if (!taskRepository.existsById(taskId)) {
+			throw new ResourceNotFoundException("Task id " + taskId + " not found! ");
 		}
 		return userRepository.findById(userId).map(user -> {
 			user.setTaskId(Long.toString((taskId)));
 			return userRepository.save(user);
-		}).orElseThrow(()-> new ResourceNotFoundException("Project id " + taskId + " Not Found!"));
-}
+		}).orElseThrow(() -> new ResourceNotFoundException("Project id " + taskId + " Not Found!"));
+	}
 }
