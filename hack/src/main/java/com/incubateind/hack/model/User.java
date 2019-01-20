@@ -49,6 +49,16 @@ public class User extends AuditModel
 	
 	private boolean isAdmin;
 	
+	private String taskId;	
+	
+	public String getTaskId() {
+		return taskId;
+	}
+
+	public void setTaskId(String taskId) {
+		this.taskId = taskId;
+	}
+
 	@ManyToOne(fetch = FetchType.LAZY, optional = true)
 	@JoinColumn(name = "task_id", nullable = true)
 	@OnDelete(action = OnDeleteAction.NO_ACTION)
