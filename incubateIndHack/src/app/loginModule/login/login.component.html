@@ -1,49 +1,60 @@
-<div><div class="header">
-  <h1>Welcome to Incubate Ind Campus Ambassador Program</h1>
-</div>
-
-<div fxFlexAlign="center"  class="login">
-  <mat-tab-group>
-    <mat-tab label="Admin">
-      <form [formGroup]="adminLoginForm" (ngSubmit)="onAdminLogin($event)">
-        <div class="login-fields">
-          <mat-grid-list class="nameHeader">
-            <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">User Name </mat-grid-tile>
-            <mat-grid-tile colspan="1" rowspan="1"><input matInput  formControlName="UserId" placeholder="User Id" required>
-            </mat-grid-tile>
-          </mat-grid-list><br> <br>
-          <mat-grid-list class="nameHeader">
-            <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Password </mat-grid-tile>
-            <mat-grid-tile colspan="1" rowspan="1"> <input matInput required formControlName="Password" placeholder="Password">
-            </mat-grid-tile>
-          </mat-grid-list><br> <br>
-          <button type="submit" class="login-submit">Log In</button><br> <br>
-        </div>
-      </form>
-    </mat-tab>
-
-    <mat-tab label="User">
-      <form [formGroup]="userLoginForm" (ngSubmit)="onUserLogin($event)">
-        <div class="login-fields">
-          <mat-grid-list class="nameHeader">
-            <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">User Name </mat-grid-tile>
-            <mat-grid-tile colspan="1" rowspan="1"> <input matInput required formControlName="UserId" placeholder="User Id">
-            </mat-grid-tile>
-          </mat-grid-list><br> <br>
-          <mat-grid-list class="nameHeader">
-            <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Password </mat-grid-tile>
-            <mat-grid-tile colspan="1" rowspan="1"> <input matInput required formControlName="Password" placeholder="Password">
-            </mat-grid-tile>
-          </mat-grid-list><br> <br>
-
-          <button type="submit" class="login-submit">Log In</button><br> <br>
-        </div>
-      </form>
-    </mat-tab>
-  </mat-tab-group>
-
-  <div class="sign-up">
-    <button mat-button (click)="openSignUp()" type="submit">Not registered? Sign up!</button>
+<div class=" background-image">
+  
+  <div class="header">
+    <h1>Welcome to Incubate Ind Campus Ambassador Program</h1>
   </div>
-</div>
+
+  <div class="login">
+    <div class="login-tab">
+      <mat-tab-group>
+        <mat-tab label="User">
+        <div class="user-type">
+              <form [formGroup]="userLoginForm" (ngSubmit)="onUserLogin($event)">
+                <div class="login-fields">
+                  <mat-grid-list class="nameHeader">
+                    <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">User Name </mat-grid-tile>
+                    <mat-grid-tile colspan="1" rowspan="1"> <input matInput required formControlName="UserId">
+                    </mat-grid-tile>
+                  </mat-grid-list><br> <br>
+                  <mat-grid-list class="nameHeader">
+                    <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Password </mat-grid-tile>
+                    <mat-grid-tile colspan="1" rowspan="1" class="password"> <input matInput required formControlName="Password">
+                    </mat-grid-tile>
+                  </mat-grid-list><br> <br>
+      
+                  <button type="submit" class="login-submit">Log In</button><br> <br>
+                </div>
+              </form>
+            </div>
+          </mat-tab>
+
+        <mat-tab label="Admin">
+        <div class="user-type">
+          <form [formGroup]="adminLoginForm" (ngSubmit)="onAdminLogin($event)">
+            <div class="login-fields">
+              <mat-grid-list class="nameHeader">
+                <mat-grid-tile colspan="1" rowspan="1" class="filterHeader adminName">Admin Name </mat-grid-tile>
+                <mat-grid-tile colspan="1" rowspan="1"><input matInput formControlName="UserId" required>
+                </mat-grid-tile>
+              </mat-grid-list><br> <br>
+              <mat-grid-list class="nameHeader">
+                <mat-grid-tile colspan="1" rowspan="1" class="filterHeader">Password </mat-grid-tile>
+                <mat-grid-tile colspan="1" rowspan="1" class="password"> <input matInput required formControlName="Password">
+                </mat-grid-tile>
+              </mat-grid-list><br> <br>
+              <button type="submit" class="login-submit">Log In</button><br> <br>
+            </div>
+          </form>
+        </div>
+        </mat-tab>
+ 
+      </mat-tab-group>
+    </div>
+
+    <div>
+      <button class="sign-up" mat-button (click)="openSignUp()" type="submit">Not registered? Sign up!</button>
+    </div>
+
+  </div>
+
 </div>

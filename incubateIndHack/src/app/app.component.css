@@ -2,3 +2,13 @@
     background-color: aliceblue;
 }
 
+.background-image{
+    background-image: url(../assets/image/bg.png);
+    height: 917px;
+    width: 1892px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-y: hidden;
+}

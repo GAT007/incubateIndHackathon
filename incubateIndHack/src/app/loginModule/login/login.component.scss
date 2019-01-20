@@ -1,12 +1,154 @@
-.backgroundImg{
+.background-image{
     background-image: url(../../../assets/image/bg.png);
-    width: 39.8rem;
-    overflow: auto;
-    position: absolute;
-    z-index: 10;
-    left:101%;
-    opacity: 0.98;
-    background: transparent;
-    top: 0;
-    bottom: .3rem;
+    height: 920px;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow-y: hidden;
 }
+
+.login{
+    background: rgba(255, 255, 255, 0.7);
+    margin-left: 33%;
+    margin-top: 3%;
+    margin-right: 30%;
+}
+
+.login-fields{
+    margin-left: 21%;
+    margin-top: 3%;
+}
+
+.header{
+    color:lightcyan;
+    margin-left: 31%;
+    margin-top: 6%;
+}
+
+.filterHeader{
+    font-size: xx-large;
+    font-family: cursive;
+}
+
+.containerClass {
+    height: auto;
+  }
+  
+  
+  .iconClass {
+    align-items: center;
+    justify-content: center;
+    margin-top: 4px;
+    /* padding-top: 10px; */
+    vertical-align: bottom;
+  }
+  
+  .bodyClass {
+    height: auto;
+  }
+  
+  
+  .hamburgerMenu{
+     background-color:  rgba(30, 114, 240, 0.89);
+     height: 100%;
+     width:auto;
+  
+  }
+  
+  .example-small-box, .example-large-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    padding: 16px;
+    border-radius: 8px;
+  }
+  
+  .example-small-box {
+    height: 100px;
+    width: 100px;
+  }
+  
+  .example-large-box {
+    height: 300px;
+    width: 300px;
+  }
+  
+  
+  .expansionPanel{
+    background-color: rgb(181, 206, 243);
+  }
+  
+  .expansionHeader{
+    background-color: rgb(119, 166, 236);
+  }
+  
+  input{
+    
+    font-size: 16px;
+    height: 45px;
+    padding: 0;
+    border: 2px solid #ccc;
+    // border-left: 0;
+    width:41%;
+    color: #666;
+    border-radius: 7px 7px 7px 7px;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: bold;
+    padding-left: 62px;
+  }
+  
+  .example-button-row button,
+  .example-button-row a {
+   
+    margin-right: 8px;
+    background-color:  rgb(119, 166, 236);
+  }
+  
+  .example-button-row1 button,
+  .example-button-row1 a {
+   
+    margin-right: 8px;
+    background-color:  rgb(175, 173, 174);
+  }
+  
+  .inptSelect{
+    margin-left: 15px;
+    
+  }
+
+  .password{
+    margin-left: 29px;
+  }
+
+  .adminName{
+      margin-left: -4%;
+  }
+
+  .login-submit{
+    width: 30%;
+    height: 42px;
+    font-size: large;
+    font-family: cursive;
+    margin-left: 47%;
+  }
+
+ /deep/ .mat-tab-label{
+    font-size: x-large;
+  font-family: cursive;
+  box-sizing: border-box;
+  width: 340px;
+  box-shadow: 5px 10px 8px 10px #888888;
+  }
+
+  /deep/ .mat-tab-label:hover {
+      color: white;
+  }
+
+  .sign-up {
+    font-size: large;
+  font-family: cursive;
+  box-sizing: border-box;
+  }
